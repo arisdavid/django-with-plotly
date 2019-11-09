@@ -1,2 +1,6 @@
 # django-with-plotly
-Using Plotly with Django
+Using plotly.js with django
+
+
+
+
