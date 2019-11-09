@@ -108,41 +108,6 @@ def pie_chart_view(request):
     return render(request, "chart.html", context)
 
 
-def scatter_chart_view(request):
-    """
-    Scatter Chart
-    :param request:
-    :return:
-    """
-    # Generate a list of random numbers
-    x = list(range(1, 6))
-    y = [random.randint(100, 600) for _ in range(6)]
-
-    # Create a trace json to hold graph data
-    trace = {
-        'x': x,
-        'y': y,
-        'type': 'scatter',
-
-    }
-
-    # Configure the chart's layout
-    layout = {'title': {'text': 'Scatter Chart',
-                        'font': {
-                            'color': '#ffffff'}
-                        },
-              'xaxis': {'title': 'X-axis', 'color': '#DCDCDC', 'mirror': 'true', 'showline': 'false'},
-              'yaxis': {'title': 'Y-axis', 'color': '#DCDCDC', 'mirror': 'true', 'showline': 'true'},
-              'plot_bgcolor': 'black', 'paper_bgcolor': 'black', 'bordercolor': '#ffffff'}
-
-    # Pass trace and layout in the context
-    context = {"trace": trace,
-               "layout": layout,
-               "title": "Scatter Chart"}
-
-    return render(request, "chart.html", context)
-
-
 def bubble_chart_view(request):
     """
     Bubble Chart
